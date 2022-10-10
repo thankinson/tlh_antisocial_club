@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block styles %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">{% endblock styles %}
+
+{% block title %}<title>Login Page</title>{% endblock title %}
+
+{% block body %}
+
+<h1> login page </h1>
+<div class="form">
+    <form method="post" action="" >
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <div>
+            {{ form.email.label }}
+            {{ form.email }}
+        </div>
+        <div>
+            {{ form.passwd.label }}
+            {{ form.passwd }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+</div>
+<h3>Want to be ANTISOCIAL?</h3>
+<a href="{{ url_for('sign_up') }}">Sign up here!</a>
+
+{% endblock body %}

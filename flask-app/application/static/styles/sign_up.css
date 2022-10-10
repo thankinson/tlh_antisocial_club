@@ -1,0 +1,14 @@
+.signup-container{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 100vh;
+}
+    .fixed-containers{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        min-height: 100vh;
+    }
