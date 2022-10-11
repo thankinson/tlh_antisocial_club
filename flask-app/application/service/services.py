@@ -26,7 +26,20 @@ class SignUpLogin():
                 login_user(user)   
                 return redirect(url_for('account'))
 
+    def logout():
+        logout_user()
+        return redirect(url_for('login'))
+
+
 class Loginservice():
     def is_logged_in():
         if current_user.is_authenticated:
             return redirect(url_for('account'))
+    
+    def is_not_logged_in():
+        if not current_user.is_authenticated:
+            return redirect(url_for('sign_up'))
+
+class DbQuery():
+    def query_curent_user():
+        return Users.query.filter_by(user_id=current_user.user_id).first()

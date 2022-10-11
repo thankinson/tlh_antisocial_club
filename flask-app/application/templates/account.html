@@ -1,10 +1,26 @@
 {% extends 'layout.html' %}
-{% block styles %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">{% endblock styles %}
+{% block styles %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/account.css') }}">{% endblock styles %}
 
 {% block title %}<title>Login Page</title>{% endblock title %}
 
 {% block body %}
 
-<h1>YOUR IN</h1>
+<div class="page-container">
+<div class="flex-row-center anti-logo-container">
+    <div class="flex-row-center anti-logo-title">
+        <h1 class="paddingzero white-text anti-shadow">ANTISOCIAL</h1>
+    </div>
+    <div class=" flex-row-center account-nav">
+        <a  href="{{ url_for('logout')}}"><h3 class="paddingzero white-text anti-shadow">Logout</h3></a>
+        <p> &nbsp;||&nbsp;</p>
+    </div>
+    <div class="anti-logo-title flex-row-center" >
+        <h3 class="paddingzero white-text anti-shadow">Logged In: {{user.user_first_name.capitalize()}} {{user.user_last_name.capitalize()}}</h3>
+    </div>
+</div>
+
+
+
+</div>
 
 {% endblock body %}

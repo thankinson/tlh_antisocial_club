@@ -1,5 +1,5 @@
 from application import app
-from application.service.pages import SignUpPage, LoginPage, AccountPage
+from application.service.pages import SignUpPage, LoginPage, AccountPage, LogoutRoute
 
 @app.route('/', methods=['GET', 'POST'])
 def sign_up():
@@ -12,3 +12,7 @@ def login():
 @app.route('/account')
 def account():
     return AccountPage.account_page()
+
+@app.route('/logout')
+def logout():
+    return LogoutRoute.logout()

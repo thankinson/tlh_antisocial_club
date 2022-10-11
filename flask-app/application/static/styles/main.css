@@ -7,6 +7,9 @@ p, a, h1, h2, h3, h4, h5, h6{
                  Verdana, 
                  sans-serif;
 }
+.white-text{
+    color: white;
+}
 body{
     display: flex;
     flex-direction: column;
@@ -14,4 +17,9 @@ body{
     align-items: center;
     width: 100vw;
     min-height: 100vh;
+    margin: 0px;
+}
+.paddingzero{
+    padding: 0%;
+    margin: 0%;
 }
