@@ -1,14 +1,6 @@
-.anti-logo-container{ 
-    width: 100vw;
-    min-height: 5vh;
-    background-color: rgb(70, 162, 190);
-}
-.anti-logo-title{
+.contact-table{
     width: 20vw;
 }
-.anti-shadow{
-    text-shadow: 2px 0px 5px black;
-}
-.account-nav{
-    width: 60vw;
+td{
+    width: 10vw;
 }

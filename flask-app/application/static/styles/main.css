@@ -1,4 +1,4 @@
-p, a, h1, h2, h3, h4, h5, h6{
+p, a, h1, h2, h3, h4, h5, h6, td{
     font-family: 'Lucida Sans', 
                  'Lucida Sans Regular', 
                  'Lucida Grande', 
@@ -22,4 +22,26 @@ body{
 .paddingzero{
     padding: 0%;
     margin: 0%;
+}
+
+/* layout_content.html */
+.anti-logo-container{ 
+    width: 100vw;
+    min-height: 7vh;
+    background-color: rgb(70, 162, 190);
+}
+.anti-logo-title{
+    width: 20vw;
+}
+.anti-shadow{
+    text-shadow: 2px 0px 5px black;
+}
+.account-nav{
+    width: 60vw;
+}
+.account-footer{
+    height: 5vh;
+    width: 100vw;
+    background-color: rgb(70, 162, 190);
+
 }

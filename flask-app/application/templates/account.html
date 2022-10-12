@@ -1,26 +1,57 @@
-{% extends 'layout.html' %}
+{% extends 'layout_content.html' %}
 {% block styles %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/account.css') }}">{% endblock styles %}
 
 {% block title %}<title>Login Page</title>{% endblock title %}
 
 {% block body %}
 
-<div class="page-container">
-<div class="flex-row-center anti-logo-container">
-    <div class="flex-row-center anti-logo-title">
-        <h1 class="paddingzero white-text anti-shadow">ANTISOCIAL</h1>
+<div class="flex-row flex-center height-half-page">
+    <div class="flex-column flex-start width-height-half-page">
+        <h2>Account Information</h2>
+        <div>
+            <hr>
+            <table class="contact-table">
+                <tr>
+                    <td>Name:</td>
+                    <td>{{user.user_first_name.capitalize()}} {{user.user_last_name.capitalize()}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{user.user_email}}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td>Number Here</td>
+                </tr>
+            </table>
+            <hr>
+            <table class="contact-table">
+                <tr>
+                    <td>Address:</td>
+                    <td>
+                        Address Line 1<br>
+                        Address Line 2<br>
+                        Address City/town<br>
+                        Post Code
+                    </td>
+                </tr>
+            </table>
+            <hr>
+        </div>
     </div>
-    <div class=" flex-row-center account-nav">
-        <a  href="{{ url_for('logout')}}"><h3 class="paddingzero white-text anti-shadow">Logout</h3></a>
-        <p> &nbsp;||&nbsp;</p>
-    </div>
-    <div class="anti-logo-title flex-row-center" >
-        <h3 class="paddingzero white-text anti-shadow">Logged In: {{user.user_first_name.capitalize()}} {{user.user_last_name.capitalize()}}</h3>
+    <div class="flex-column flex-start width-height-half-page">
+        <h2>Update Account Information</h2>
+        <div>
+            <p>Change Name</p>
+            <p>Change Email</p>
+            <p>Add / Change Phone Number</p>
+            <p>Change Password</p>
+            <p>Add / Change Address</p>
+        </div>
     </div>
 </div>
-
-
-
+<div class="flex-row flex-center height-half-page">
+    <h1>look more text</h1>
 </div>
 
 {% endblock body %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/flex_settings.css') }}">
+    
+    {% block styles %}{% endblock styles %}
+    {% block title %}<title>Document</title>{% endblock title %}
+</head>
+<body>
+    
+    <div class="page-container flex-column flex-start">
+        <div class="flex-row flex-center anti-logo-container">
+            <div class="flex-row flex-center anti-logo-title">
+                <h1 class="paddingzero white-text anti-shadow">ANTISOCIAL</h1>
+            </div>
+            <div class=" flex-row flex-center account-nav">
+                <a  href="{{ url_for('logout')}}"><h3 class="paddingzero white-text anti-shadow">Logout</h3></a>
+                <p> &nbsp;||&nbsp;</p>
+            </div>
+            <div class="anti-logo-title flex-row flex-center" >
+                <h3 class="paddingzero white-text anti-shadow">Logged In: {{user.user_first_name.capitalize()}} {{user.user_last_name.capitalize()}}</h3>
+            </div>
+        </div>
+        
+        {% block body %}
+        {% endblock body %}
+
+        </div>
+        <div class="flex-row flex-center account-footer">
+            <h5 class="white-text paddingzero anti-shadow">git-hub link</h5>
+        </div>
+    
+</body>
+</html>
