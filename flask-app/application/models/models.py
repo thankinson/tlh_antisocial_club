@@ -10,7 +10,6 @@ class Users(db.Model, UserMixin):
     phone_id = db.relationship('UserPhone', backref='users')
     address_id = db.relationship('UserAddress', backref='users')
 
-
     def get_id(self):
         return (self.user_id)
 
