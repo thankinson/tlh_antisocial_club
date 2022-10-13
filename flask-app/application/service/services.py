@@ -1,6 +1,6 @@
 from flask import redirect, url_for, request
 from application import db, bcrypt
-from application.models.models import Users, Address, UserAddress, Phonenumber, UserPhone
+from application.models.models import Users #, Address, UserAddress, Phonenumber, UserPhone
 from flask_login import login_user, current_user, logout_user, login_required
 
 class SignUpLogin():
@@ -44,16 +44,16 @@ class DbQuery():
     def query_curent_user():
         return Users.query.filter_by(user_id=current_user.user_id).first()
     
-    def query_user_address():
-        query = db.session.query(
-            Users, UserAddress, Address
-            ).filter(Users.user_id==current_user.user_id
-            ).join(UserAddress,Users.address_id==UserAddress.user_id
-            ).join(Address,UserAddress.address_id==Address.contact_id
-            ).first()
-        for user, useraddress, address in query:
-            if user.address_id == useraddress.user_id and useraddress.address_id == address.user_id:
-                return query
-            else:
-                return "No Data"
+    # def query_user_address():
+    #     query = db.session.query(
+    #         Users, UserAddress, Address
+    #         ).filter(Users.user_id==current_user.user_id
+    #         ).join(UserAddress,Users.address_id==UserAddress.user_id
+    #         ).join(Address,UserAddress.address_id==Address.contact_id
+    #         ).first()
+    #     for user, useraddress, address in query:
+    #         if user.address_id == useraddress.user_id and useraddress.address_id == address.user_id:
+    #             return query
+    #         else:
+    #             return "No Data"
      

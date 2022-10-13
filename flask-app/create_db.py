@@ -1,5 +1,5 @@
 from application import db, bcrypt
-from application.models.models import Users, Address, UserAddress, Phonenumber, UserPhone
+from application.models.models import Users #, Address, UserAddress, Phonenumber, UserPhone
 
 
 # default password for all suers is password
