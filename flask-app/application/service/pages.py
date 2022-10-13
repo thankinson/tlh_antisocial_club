@@ -26,8 +26,8 @@ class AccountPage():
         if not current_user.is_authenticated:
             return redirect(url_for('sign_up'))
         user = DbQuery.query_curent_user()
-        # address = DbQuery.query_user_address()
-        return render_template('account.html', user=user)
+        address = DbQuery.query_user_address()
+        return render_template('account.html', user=user, address=address)
 
 class LogoutRoute():
     def logout():
