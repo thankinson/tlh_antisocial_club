@@ -28,6 +28,20 @@ class SignUpLogin():
         logout_user()
         return redirect(url_for('login'))
 
+class AccountService():
+    def add_address(address):
+        if request.method == 'POST':
+            address = Address(
+                address_line_one = address.first_line.data,
+                address_line_two = address.second_line.data,
+                address_location = address.county.data,
+                address_posycode = address.postcode.data
+            )
+            db.session.add(address)
+            linkUser = UserAddress(user_id=current_user.user_id, address_id=address)
+            db.session.add(linkUser)
+            db.session.commit()
+        return redirect(url_for('account'))
 
 class Loginservice():
     def is_logged_in():
@@ -45,6 +59,7 @@ class DbQuery():
     def query_user_address():
         print('test test test test')
         user = DbQuery.query_curent_user()
+        print("User number is -----------", user.user_id)
         if not UserAddress.query.filter_by(user_id=user.user_id).first() == '':
             return "No data here"
         else:

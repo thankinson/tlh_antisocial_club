@@ -1,6 +1,7 @@
+from audioop import add
 from flask import render_template, redirect, url_for
-from application.forms.forms import SignUpForm, LoginForm
-from application.service.services import SignUpLogin, DbQuery
+from application.forms.forms import SignUpForm, LoginForm, AddressForm
+from application.service.services import SignUpLogin, DbQuery, AccountService
 from flask_login import current_user
 
 class SignUpPage():
@@ -28,6 +29,14 @@ class AccountPage():
         user = DbQuery.query_curent_user()
         address = DbQuery.query_user_address()
         return render_template('account.html', user=user, address=address)
+    
+    def address():
+        if not current_user.is_authenticated:
+            return redirect(url_for('sign_up'))
+        address = AddressForm()
+        if address.validate_on_submit():
+            return AccountPage.address(address=address)
+        return render_template('address.html', form=address)
 
 class LogoutRoute():
     def logout():

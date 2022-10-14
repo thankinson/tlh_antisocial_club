@@ -16,3 +16,7 @@ def account():
 @app.route('/logout')
 def logout():
     return LogoutRoute.logout()
+
+@app.route('/address', methods=['GET', 'POST'])
+def address():
+    return AccountPage.address()

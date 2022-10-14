@@ -1,0 +1,32 @@
+{% extends 'layout_content.html' %}
+{% block styles %}<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/account.css') }}">{% endblock styles %}
+
+{% block title %}<title>Add Address</title>{% endblock title %}
+
+{% block body %}
+    <div class="form">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <form method="post" action="">
+            <div>
+                {{ form.first_line.label }}
+                {{ form.first_line }}
+            </div>
+            <div>
+                {{form.second_line.label}}
+                {{from.second_line}}
+            </div>
+            <div>
+                {{form.county.label}}
+                {{form.county}}
+            </div>
+            <div>
+                {{form.postcode.label}}
+                {{form.postcode}}
+            </div>
+            <div>
+                {{form.submit}}
+            </div>
+        </form>
+    </div>
+{% endblock body %}

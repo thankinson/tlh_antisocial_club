@@ -15,3 +15,13 @@ class LoginForm(FlaskForm):
     email = StringField('Email: ', validators=[DataRequired(), Email(), Length(min=2)])
     passwd = PasswordField('Password: ', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+class AddressForm(FlaskForm):
+    first_line = StringField('Address 1st line: ', validators=[DataRequired(), Length(min=2, max=50)])
+    second_line = StringField('Address 2nd line: ', validators=[DataRequired(), Length(min=2, max=50)])
+    county = StringField('Region/County: ', validators=[DataRequired(), Length(min=2, max=50)])
+    postcode = StringField('Address 1st line: ', validators=[DataRequired(), Length(min=2, max=7)])
+    submit = SubmitField('Add Address')
+
+    
+    
